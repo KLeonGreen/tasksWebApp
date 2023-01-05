@@ -1,0 +1,71 @@
+.planner-section {
+  width: 408px;
+  margin-inline: 40px;
+}
+
+.planners-cards {
+  height: 475px;
+  overflow: auto;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+h3 {
+  font-size: 20px;
+  margin-block: 20px;
+}
+
+.search-area {
+  height: 45px;
+  background-color: aliceblue;
+  font-size: 14px;
+  font-family: inherit;
+  border: none;
+}
+
+.add-button {
+  padding: 0;
+  height: 30px;
+  background-color: white;
+  border: none;
+}
+
+.add-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.title-planner {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tasks-planner {
+  color: #f0be46;
+}
+
+.date-planner {
+  color: gray;
+  font-size: 14px;
+}
+
+.planner-card {
+  border: solid 1px #f0be46;
+  padding: 10px;
+  border-radius: 10px;
+  margin-block: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.planner-card:hover {
+  background-color: #f0be46;
+  color: white !important;
+  transition: 0.3s;
+}
+.planner-card:hover .tasks-planner {
+  color: white;
+}

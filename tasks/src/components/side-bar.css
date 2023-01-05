@@ -1,0 +1,19 @@
+.side-bar {
+  width: 350px;
+}
+
+.task-button {
+  background-color: black;
+  color: white;
+  height: 64px;
+  border-radius: 0 10px 10px 0;
+  padding-inline-start: 50px;
+}
+
+.logo {
+  padding-inline-start: 50px;
+  margin-block-end: 83px;
+}
+.task-button img {
+  width: 24px;
+}
