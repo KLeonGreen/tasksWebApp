@@ -3,8 +3,12 @@ import "./task-section.css";
 import { Form, FormControl, Button } from "react-bootstrap";
 import add from "../assets/icons/add.svg";
 import CheckBox from "./CheckBox";
+import { useDispatch, useSelector } from "react-redux";
 
 function TaskSection() {
+  const tasksPlanner = useSelector((state) => state.planner.activePlanner);
+  const tasks = tasksPlanner ? tasksPlanner.tasks : [];
+
   return (
     <div className="task-section">
       <h2>Planner title</h2>
@@ -20,12 +24,11 @@ function TaskSection() {
         </Form>
       </div>
       <div className="mt-3">
-        <CheckBox />
-        <CheckBox />
-        <CheckBox />
-        <CheckBox />
-        <CheckBox />
-        <CheckBox />
+        {tasksPlanner &&
+          tasks &&
+          tasks.map((task) => {
+            return <CheckBox key={task.id} task={task} />;
+          })}
       </div>
     </div>
   );

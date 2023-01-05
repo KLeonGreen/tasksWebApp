@@ -3,8 +3,20 @@ import "./planner-section.css";
 import { Form, FormControl, Button } from "react-bootstrap";
 import add from "../assets/icons/add.svg";
 import PlannerCard from "./PlannerCard";
+import { useEffect } from "react";
+import { getPlanner } from "../redux/actions/action";
+import { useDispatch, useSelector } from "react-redux";
 
 function PlannerSection() {
+  const planners = useSelector((state) => state.planner.content);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPlanner());
+  }, []);
+
+  console.log(planners);
+
   return (
     <div className="planner-section">
       <h2>
@@ -23,12 +35,9 @@ function PlannerSection() {
       </div>
 
       <div className="planners-cards">
-        <PlannerCard />
-        <PlannerCard />
-        <PlannerCard />
-        <PlannerCard />
-        <PlannerCard />
-        <PlannerCard />
+        {planners.map((planner) => (
+          <PlannerCard key={planner.id} planner={planner} plannersArray={planners} />
+        ))}
       </div>
     </div>
   );

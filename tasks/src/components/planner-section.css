@@ -44,14 +44,14 @@ h3 {
   font-weight: 600;
 }
 
-.tasks-planner {
+/* .tasks-planner {
   color: #f0be46;
-}
-
+} */
+/* 
 .date-planner {
   color: gray;
   font-size: 14px;
-}
+} */
 
 .planner-card {
   border: solid 1px #f0be46;
@@ -68,4 +68,15 @@ h3 {
 }
 .planner-card:hover .tasks-planner {
   color: white;
+}
+
+.clicked {
+  border: solid 1px #f0be46;
+  background-color: #f0be46;
+  color: white !important;
+  padding: 10px;
+  border-radius: 10px;
+  margin-block: 10px;
+  cursor: pointer;
+  transition: 0.4s;
 }

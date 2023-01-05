@@ -1,6 +1,6 @@
 import React from "react";
 
-function CheckBox() {
+function CheckBox({ task }) {
   return (
     <div className="d-flex align-items-center m-0">
       <div class="checkbox">
@@ -14,7 +14,7 @@ function CheckBox() {
           </svg>
         </label>
       </div>
-      <p>Task name goes here</p>
+      <p>{task.content}</p>
     </div>
   );
 }
