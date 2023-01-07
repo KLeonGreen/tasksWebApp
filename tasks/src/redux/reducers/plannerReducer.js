@@ -1,8 +1,9 @@
-import { GET_PLANNER, ACTIVE_PLANNER } from "../actions/action";
+import { GET_PLANNER, ACTIVE_PLANNER, GET_PLANNER_ID } from "../actions/action";
 
 const defaultState = {
   content: [],
   activePlanner: null,
+  plannerId: null,
 };
 
 export const plannerReducer = (state = defaultState, action) => {
@@ -17,6 +18,12 @@ export const plannerReducer = (state = defaultState, action) => {
       return {
         ...state,
         activePlanner: action.payload,
+      };
+
+    case GET_PLANNER_ID:
+      return {
+        ...state,
+        plannerId: action.payload,
       };
     default:
       return state;
