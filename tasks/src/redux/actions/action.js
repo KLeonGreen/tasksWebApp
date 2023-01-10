@@ -4,7 +4,8 @@ export const GET_PLANNER_ID = "GET_PLANNER_ID";
 
 export const getPlanner = () => {
   return async (dispatch, useState) => {
-    let response = await fetch("http://localhost:3000/planner/");
+    const apiURL = process.env.REACT_APP_BE_URL;
+    let response = await fetch(`${apiURL}/planner`);
     let planners = await response.json();
     dispatch({
       type: GET_PLANNER,
@@ -24,13 +25,14 @@ export const getActivePlanner = (planner) => {
 
 export const addPlanner = (planner) => {
   return async (dispatch, useState) => {
+    const apiURL = process.env.REACT_APP_BE_URL;
     const postHeaders = {
       method: "POST",
       body: JSON.stringify(planner),
       headers: { "Content-Type": "application/json" },
     };
 
-    let response = await fetch("http://localhost:3000/planner/", postHeaders);
+    let response = await fetch(`${apiURL}/planner/`, postHeaders);
     console.log(response);
   };
 };
@@ -44,13 +46,14 @@ export const getPlannerId = (plannerId) => {
 
 export const addTask = (task, plannerId) => {
   return async (dispatch, useState) => {
+    const apiURL = process.env.REACT_APP_BE_URL;
     const postHeaders = {
       method: "POST",
       body: JSON.stringify(task),
       headers: { "Content-Type": "application/json" },
     };
 
-    let response = await fetch(`http://localhost:3000/task/${plannerId}`, postHeaders);
+    let response = await fetch(`${apiURL}/task/${plannerId}`, postHeaders);
     console.log(response);
   };
 };

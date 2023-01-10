@@ -20,8 +20,6 @@ function TaskSection() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.log(IDPlanner);
-
   const taskAdded = {
     content: addedtask,
     done: false,

@@ -25,7 +25,7 @@ function PlannerSection() {
 
   useEffect(() => {
     dispatch(getPlanner());
-  }, [planners]);
+  }, []);
 
   //console.log(planners);
 
