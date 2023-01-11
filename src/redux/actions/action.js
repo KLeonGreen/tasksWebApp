@@ -31,9 +31,11 @@ export const addPlanner = (planner) => {
       body: JSON.stringify(planner),
       headers: { "Content-Type": "application/json" },
     };
-
     let response = await fetch(`${apiURL}/planner/`, postHeaders);
-    console.log(response);
+    if (response.ok) {
+      //fetch the planner
+      dispatch(getPlanner());
+    }
   };
 };
 
@@ -54,6 +56,8 @@ export const addTask = (task, plannerId) => {
     };
 
     let response = await fetch(`${apiURL}/task/${plannerId}`, postHeaders);
-    console.log(response);
+    if (response.ok) {
+      dispatch(getPlanner());
+    }
   };
 };
